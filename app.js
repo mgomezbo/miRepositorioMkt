@@ -69,8 +69,11 @@ if ('development' == app.get('env')) {
 console.log('Definida Config');
 // HubExchange Routes
 app.get('/', routes.index );
+console.log('get ok');
 app.post('/login', tokenFromJWT, routes.login );
+console.log('login ok');
 app.post('/logout', routes.logout );
+console.log('logout ok');
 
 // Custom Activity Routes for interacting with Desk.com API
 app.post('/ixn/activities/create-case/save/', activityCreate.save );
