@@ -89,7 +89,9 @@ console.log('update-case ok');
 app.get('/clearList', function( req, res ) {
 	// The client makes this request to get the data
 	activityUtils.logExecuteData = [];
+	console.log('ejecuta la funcion');
 	res.send( 200 );
+	console.log('realiza send');
 console.log('Ok custom activity');
 });
 
