@@ -88,6 +88,7 @@ app.post('/ixn/activities/update-case/execute/', activityUpdate.execute );
 console.log('update-case ok');
 app.get('/clearList', function( req, res ) {
 	// The client makes this request to get the data
+	console.log('entra en el metodo');
 	activityUtils.logExecuteData = [];
 	console.log('ejecuta la funcion');
 	res.send( 200 );
