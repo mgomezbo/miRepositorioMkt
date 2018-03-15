@@ -25,7 +25,7 @@ var APIKeys = {
     appSignature    : 'S5ME1Y9DABc9cP3L-qEtl8j0CbYKmy4jFoOkK6ijG_C1f3jG2lRW7qAohOUnSaweY6VnUjVkuTdab430uSxGV8P9OAyoqnGNorhy_Zyq1ajTWvH6NZwpCXVGN25kJlnk79ZB0UuhEE98WZJfHAw0UHkLx-3Qs5DTavapVSHz3n-CHtj8nPS0lpt6MsWPMf2gGntI1f3bff_XnuakoGOD6HJCZjplK4lyKP-57LsKXW-BXBXf21O42vbFH4o-KA2',
     authUrl         : 'https://auth.exacttargetapis.com/v1/requestToken?legacy=1'
 };
-
+console.log('Definidos APIKEY');
 
 // Simple custom middleware
 function tokenFromJWT( req, res, next ) {
@@ -46,7 +46,7 @@ function tokenFromJWT( req, res, next ) {
 
 // Use the cookie-based session  middleware
 app.use(express.cookieParser());
-
+console.log('OK middkeware');
 // TODO: MaxAge for cookie based on token exp?
 app.use(express.cookieSession({secret: "DeskAPI-CookieSecret0980q8w0r8we09r8"}));
 
@@ -61,12 +61,12 @@ app.use(express.methodOverride());
 app.use(express.favicon());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
-
+console.log('OK config');
 // Express in Development Mode
 if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
-
+console.log('Definida Config');
 // HubExchange Routes
 app.get('/', routes.index );
 app.post('/login', tokenFromJWT, routes.login );
@@ -87,6 +87,7 @@ app.get('/clearList', function( req, res ) {
 	// The client makes this request to get the data
 	activityUtils.logExecuteData = [];
 	res.send( 200 );
+console.log('Ok custom activity');
 });
 
 
@@ -98,6 +99,7 @@ app.get('/getActivityData', function( req, res ) {
 	} else {
 		res.send( 200, {data: activityUtils.logExecuteData} );
 	}
+console.log('Ok metodo 2');
 });
 
 app.get( '/version', function( req, res ) {
