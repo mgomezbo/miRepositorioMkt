@@ -80,12 +80,12 @@ app.post('/ixn/activities/create-case/save/', activityCreate.save );
 app.post('/ixn/activities/create-case/validate/', activityCreate.validate );
 app.post('/ixn/activities/create-case/publish/', activityCreate.publish );
 app.post('/ixn/activities/create-case/execute/', activityCreate.execute );
-
+console.log('create-case ok');
 app.post('/ixn/activities/update-case/save/', activityUpdate.save );
 app.post('/ixn/activities/update-case/validate/', activityUpdate.validate );
 app.post('/ixn/activities/update-case/publish/', activityUpdate.publish );
 app.post('/ixn/activities/update-case/execute/', activityUpdate.execute );
-
+console.log('update-case ok');
 app.get('/clearList', function( req, res ) {
 	// The client makes this request to get the data
 	activityUtils.logExecuteData = [];
